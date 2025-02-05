@@ -53,7 +53,7 @@ button {
 }
 
 button:hover {
-  background: #6C8CFF;
+  background: #6c8cff;
 }
 
 /* Design card */
@@ -61,9 +61,11 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  justify-content: space-evenly;
 }
 .card {
-  width: 360px;
+  width: 315px;
+  border: 1px solid #808080;
 }
 
 .card img {
@@ -74,7 +76,6 @@ button:hover {
 
 .card-properties {
   display: flex;
-  
 }
 .card-list {
   display: flex;
@@ -85,7 +86,7 @@ button:hover {
 }
 
 .card-list li {
-  color: #2E2F42;
+  color: #2e2f42;
   font-size: 12px;
   font-weight: 600;
   line-height: 1.33;
@@ -97,7 +98,17 @@ button:hover {
   font-weight: 400;
   line-height: 2;
 }
-
+.btn-load {
+  margin: 32px auto 44px;
+  display: inline-flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.is-hidden {
+  display: none;
+}
 
 /* Loader */
 .loader {
@@ -114,6 +125,10 @@ button:hover {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
