@@ -16,7 +16,6 @@ let page = 1;
 let limit = 40;
 let query = '';
 let totalHits = 0;
-let maxHits = 120;
 
 searchForm.addEventListener('submit', handleSearch);
 btnLoad.addEventListener('click', loadMoreImages);
@@ -43,17 +42,13 @@ async function handleSearch(event) {
     renderImagesCard(data, cardContainer);
     totalHits = data.totalHits;
 
-    if (totalHits > maxHits) {
-      totalHits = maxHits;
-    }
-
-    page += 1;
-
-    if (page <= Math.ceil(totalHits / limit)) {
+   if (page < Math.ceil(totalHits / limit)) {
       btnLoad.classList.remove('is-hidden');
     } else {
       btnLoad.classList.add('is-hidden');
     }
+
+    page += 1;
   } catch (err) {
     onFetchError();
   } finally {
