@@ -42,7 +42,7 @@ async function handleSearch(event) {
     renderImagesCard(data, cardContainer);
     totalHits = data.totalHits;
 
-   if (page < Math.ceil(totalHits / limit)) {
+   if (totalHits > limit) {
       btnLoad.classList.remove('is-hidden');
     } else {
       btnLoad.classList.add('is-hidden');
